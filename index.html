@@ -10,17 +10,29 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <input type="checkbox" id="menu-toggle">
-    <label for="menu-toggle" id="menu-btn">▶</label>
-    <nav id="side-panel">
-        <div id="logo">Logo</div>
-        <div id="search-bar">Search Bar</div>
-        <div id="searched-info">Searched Info</div>
-        <div id="ad-banner">Ad Banner</div>
-    </nav>
-    <main>
+    <div class="wrapper">
+        <nav class="flex-column">
+            <section class="fixed-menu flex-column">
+                <!--<button aria-label="메뉴 열기">
+                    <i class="icon-menu"></i>
+                </button>-->
+                <button class="brand" aria-label="Brand icon">brand-icon</button>
+                <button class="search" aria-label="Search icon">search-icon</button>
+                <button class="info" aria-label="Info icon">info-icon</button>
+            </section>
+            <hr>
+            <section class="recently-searched flex-column"></section>
+        </nav>
+        <main class="flex-column">
+            <div class="search-bar">
+                <input type="search" aria-label="Search input" placeholder="Area name or Postcode">
+                <button aria-label="Search button">Search</button>
+            </div>
+            <artilce class="searched-info flex-column">Searched Info</artilce>
+            <footer class="ad-banner">Ad Banner</footer>
+        </main>
         <div id="map"></div>
-    </main>
+    </div>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
      crossorigin=""></script>
