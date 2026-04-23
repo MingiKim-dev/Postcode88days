@@ -5,37 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Postcode88days</title>
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
-    <link rel="stylesheet" href="style.css">
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/>
+    <link rel="stylesheet" href="./styles/CSS/reset.css">
+    <link rel="stylesheet" href="./styles/CSS/default.css">
+    <link rel="stylesheet" href="./styles/CSS/map.css">
+    <link rel="stylesheet" href="./styles/CSS/uiOverlay.css">
+    <link rel="stylesheet" href="./styles/CSS/searchBar.css">
+    <link rel="stylesheet" href="./styles/CSS/searchPanel.css">
+    
 </head>
 <body>
-    <div class="wrapper">
-        <nav class="flex-column">
-            <section class="fixed-menu flex-column">
-                <!--<button aria-label="메뉴 열기">
-                    <i class="icon-menu"></i>
-                </button>-->
-                <button class="brand" aria-label="Brand icon">brand-icon</button>
-                <button class="search" aria-label="Search icon">search-icon</button>
-                <button class="info" aria-label="Info icon">info-icon</button>
-            </section>
-            <hr>
-            <section class="recently-searched flex-column"></section>
-        </nav>
-        <main class="flex-column">
-            <div class="search-bar">
-                <input type="search" aria-label="Search input" placeholder="Area name or Postcode">
-                <button aria-label="Search button">Search</button>
-            </div>
-            <artilce class="searched-info flex-column">Searched Info</artilce>
-            <footer class="ad-banner">Ad Banner</footer>
-        </main>
+    <div class="initial-wrapper">
         <div id="map"></div>
+        <section class="wrapper search-func" role="search">
+            <form id="search-bar" onsubmit="return false;">
+                <img id="search-bar-icon" aria-label="brand icon">
+                <input id="search-input" type="text" placeholder="Enter Area name or Postcode" list="recent-searches"></input>
+                <button type="submit">
+                    <img src="./assets/icons/search24-2.svg" alt="search icon">
+                </button>
+            </form>
+            <section class="wrapper search-panel" role="data-list">
+                <p>Recently Searched</p>
+                <ul id="searched-data-list">
+                    <li>
+                        <img src="./assets/icons/history24-2.svg">
+                        <span>test 1</span>
+                    </li>
+                    <li>
+                        <img src="./assets/icons/history24-2.svg">
+                        <span>test 2</span>
+                    </li>
+                    <li>
+                        <img src="./assets/icons/history24-2.svg">
+                        <span>test 3</span>
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <!--<article id="search-result" class="wrapper result-panel">
+        </article> -->
     </div>
+    
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-     crossorigin=""></script>
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+    crossorigin=""></script>
     <script src="script.js"></script>
 </body>
 </html>

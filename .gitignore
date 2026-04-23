@@ -79,3 +79,6 @@ yarn-error.log*
 
 # Environment files (local configs)
 /.env.*
+
+styles/SCSS/*.scss
+styles/CSS/*.map
