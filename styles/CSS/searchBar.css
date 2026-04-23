@@ -13,7 +13,8 @@
   flex-direction: row;
   align-items: center;
   background-color: white;
-  width: 95vw;
+  width: 95%;
+  max-width: 600px;
   height: 3rem;
   padding: 0.1rem 0.5rem;
   border-width: 1px;
