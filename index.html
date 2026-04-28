@@ -8,44 +8,56 @@
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/>
     <link rel="stylesheet" href="./styles/CSS/reset.css">
-    <link rel="stylesheet" href="./styles/CSS/default.css">
-    <link rel="stylesheet" href="./styles/CSS/map.css">
-    <link rel="stylesheet" href="./styles/CSS/uiOverlay.css">
-    <link rel="stylesheet" href="./styles/CSS/searchBar.css">
-    <link rel="stylesheet" href="./styles/CSS/searchPanel.css">
-    
+    <!-- <link rel="stylesheet" href="./styles/CSS/test.css"> -->
+    <link rel="stylesheet" href="./styles/CSS/initialLayout.css">
+    <link rel="stylesheet" href="./styles/CSS/search.css">
 </head>
 <body>
-    <div class="initial-wrapper">
-        <div id="map"></div>
-        <section class="wrapper search-func" role="search">
-            <form id="search-bar" onsubmit="return false;">
-                <img id="search-bar-icon" aria-label="brand icon">
-                <input id="search-input" type="text" placeholder="Enter Area name or Postcode"></input>
-                <button type="submit">
-                    <img src="./assets/icons/search24-2.svg" alt="search icon">
+    <div class="base-layer">
+        <section class="map-layer">
+            <div id="map"></div>
+        </section>
+        <section class="information-layer">
+            <form class="search-bar" onsubmit="return false;">
+                <button class="search-bar__control1" aria-label="search control">
+                    <img src="./assets/icons/map-pin-search24-2.svg" aria-label="brand icon">
+                </button>
+                <input id="search-bar__input" class="search-input" type="text" placeholder="Enter area name or postcode" role="search-input" aria-label="search input">
+                <button class="search-bar__control2" type="submit" aria-label="search submit">
+                    <img src="./assets/icons/search24-2.svg">
                 </button>
             </form>
-            <section class="wrapper search-panel" role="data-list">
-                <p>Recently Searched</p>
-                <ul id="searched-data-list">
-                    <li>
-                        <img src="./assets/icons/history24-2.svg">
-                        <span>test 1</span>
-                    </li>
-                    <li>
-                        <img src="./assets/icons/history24-2.svg">
-                        <span>test 2</span>
-                    </li>
-                    <li>
-                        <img src="./assets/icons/history24-2.svg">
-                        <span>test 3</span>
-                    </li>
-                </ul>
+            <section class="search-list">
+                <div id="search-list__recent" class="search-list__recent layer" aria-label="recently searched list">
+                    <p>Recently searched</p>
+                    <ul id="recent-datalist" class="recent-datalist">
+                        <li>
+                            <img src="./assets/icons/history24-2.svg"><span>test-recent-1</span>
+                        </li>
+                        <li>
+                            <img src="./assets/icons/history24-2.svg"><span>test-recent-2</span>
+                        </li>
+                        <li>
+                            <img src="./assets/icons/history24-2.svg"><span>test-recent-3</span>
+                        </li>
+                    </ul>
+                </div>
+                <div id="search-list__suggest" class="search-list__suggest layer" aria-label="suggested search list">
+                    <ul id="suggest-datalist" class="suggest-datalist">
+                        <li>
+                            <span>test-suggest-1</span>
+                        </li>
+                        <li>
+                            <span>test-suggest-2</span>
+                        </li>
+                        <li>
+                            <span>test-suggest-3</span>
+                        </li>
+                    </ul>
+                </div>
             </section>
+            <article class="result-layer"></article>
         </section>
-        <!--<article id="search-result" class="wrapper result-panel">
-        </article> -->
     </div>
     
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"

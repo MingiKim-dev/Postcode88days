@@ -1,0 +1,15 @@
+*[class$=layer] {
+  display: grid;
+}
+
+.base-layer {
+  grid-template-columns: 1fr 1fr;
+}
+
+.map-layer {
+  background-color: red;
+}
+
+.information-layer {
+  background-color: blue;
+}/*# sourceMappingURL=test.css.map */

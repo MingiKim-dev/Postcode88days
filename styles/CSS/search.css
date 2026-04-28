@@ -1,0 +1,107 @@
+.search-bar {
+  pointer-events: auto;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  align-items: center;
+  width: 95%;
+  height: 3rem;
+  margin: 1rem 1rem 0;
+  padding: 0.5rem 1rem;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
+  border-radius: 1.5rem;
+  background-color: white;
+}
+
+.search-input {
+  flex-grow: 1;
+}
+
+.search-bar__control, .search-bar__submit {
+  flex-shrink: 0;
+}
+
+.search-list {
+  width: 95%;
+  margin: 0 1rem;
+  padding: 0 1rem;
+}
+
+.search-list__recent {
+  display: none;
+}
+.search-list__recent p {
+  padding: 1rem 0.75rem;
+}
+.search-list__recent ul {
+  padding: 0 2.5rem;
+}
+.search-list__recent ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search-list__recent ul li span {
+  margin-left: 1rem;
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid black;
+}
+
+.search-list__suggest {
+  display: none;
+}
+.search-list__suggest ul {
+  padding: 0 2.5rem;
+}
+.search-list__suggest ul li {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.search-list__suggest ul li span {
+  /*No margin for icons*/
+  width: 100%;
+  padding: 1rem 0;
+  border-bottom: 1px solid black;
+}
+
+.search-list__recent li:last-child span, .search-list__suggest li:last-child span {
+  border-bottom: none;
+}
+
+.information-layer:focus-within {
+  height: 100dvh;
+  background-color: white;
+}
+
+/* When display recent searches == focus O, input X */
+.information-layer:has(.search-input:focus:-moz-placeholder) .search-list__recent {
+  display: block;
+}
+.information-layer:has(.search-input:focus:placeholder-shown) .search-list__recent {
+  display: block;
+}
+
+/* When display suggestions == focus O, input O */
+.information-layer:has(.search-input:not(:-moz-placeholder)) .search-list__suggest {
+  display: block;
+}
+.information-layer:has(.search-input:not(:placeholder-shown)) .search-list__suggest {
+  display: block;
+}
+
+.information-layer:has(.search-input:not(:-moz-placeholder)) .search-list__recent {
+  display: none !important;
+}
+
+.information-layer:has(.search-input:not(:placeholder-shown)) .search-list__recent {
+  display: none !important;
+}
+
+/* When no focus in input == focus X, input O OR X */
+.information-layer:has(.search-input:not(:focus)) .search-list__suggest, .search-list__recent {
+  display: none;
+}/*# sourceMappingURL=search.css.map */
