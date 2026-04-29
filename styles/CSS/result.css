@@ -26,28 +26,6 @@
   margin-bottom: 2rem;
   color: #333;
 }
-.result-panel .result-panel__occupation-list {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-.result-panel .result-panel__occupation-list .occupation-list__occupation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-}
-.result-panel .result-panel__occupation-list .occupation-list__occupation .occupation-circle {
-  background-color: red;
-  border-radius: 50%;
-  width: 5rem;
-  height: 5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
 .result-panel hr {
   align-self: center;
   width: 80%;
