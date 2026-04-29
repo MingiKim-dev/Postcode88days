@@ -11,6 +11,7 @@
     <!-- <link rel="stylesheet" href="./styles/CSS/test.css"> -->
     <link rel="stylesheet" href="./styles/CSS/initialLayout.css">
     <link rel="stylesheet" href="./styles/CSS/search.css">
+    <link rel="stylesheet" href="./styles/CSS/result.css">
 </head>
 <body>
     <div class="base-layer">
@@ -56,7 +57,48 @@
                     </ul>
                 </div>
             </section>
-            <article class="result-layer"></article>
+            <article id="result-panel" class="result-panel">
+                <h1 id="result-panel__area-name" class="result-panel__area-name">Springfield</h1>
+                <h4 id="result-panel__state" class="result-panel__state">Queensland</h4>
+                <h3 id="result-panel__postcode" class="result-panel__postcode">4000</h3>
+                <h2 id="result-panel__extendable" class="result-panel__extendable">Not extendable</h2>
+                <!-- Occupation list will be more concerned yet. -->
+                <div id="result-panel__occupation-list" class="result-panel__occupation-list">
+                    <div id="occupation-list__occupation1" class="occupation-list__occupation">
+                        <div id="occupation-circle1" class="occupation-circle">
+                            <img id="occupation-icon1" class="occupation-icon" src="./assets/icons/pickaxe48-2.svg">
+                        </div>
+                        <p id="occupation-name1" class="occupation-name">Mining</p>
+                    </div>
+                    <div id="occupation-list__occupation2" class="occupation-list__occupation">
+                        <div id="occupation-circle2" class="occupation-circle">
+                            <img id="occupation-icon2" class="occupation-icon" src="./assets/icons/pickaxe48-2.svg">
+                        </div>
+                        <p id="occupation-name2" class="occupation-name">Hospitality</p>
+                    </div>
+                    <div id="occupation-list__occupation3" class="occupation-list__occupation">
+                        <div id="occupation-circle3" class="occupation-circle">
+                            <img id="occupation-icon3" class="occupation-icon" src="./assets/icons/pickaxe48-2.svg">
+                        </div>
+                        <p id="occupation-name3" class="occupation-name">Farmhand</p>
+                    </div>
+                    <div id="occupation-list__occupation4" class="occupation-list__occupation">
+                        <div id="occupation-circle4" class="occupation-circle">
+                            <img id="occupation-icon4" class="occupation-icon" src="./assets/icons/pickaxe48-2.svg">
+                        </div>
+                        <p id="occupation-name4" class="occupation-name">Factory Worker</p>
+                    </div>
+                    <div id="occupation-list__occupation5" class="occupation-list__occupation">
+                        <div id="occupation-circle5" class="occupation-circle">
+                            <img id="occupation-icon5" class="occupation-icon" src="./assets/icons/pickaxe48-2.svg">
+                        </div>
+                        <p id="occupation-name5" class="occupation-name">Cleaning</p>
+                    </div>
+                </div>
+                <!-- Occupation list will be more concerned yet. -->
+                <hr>
+                <button id="result-panel__map-button" class="result-panel__map-button">Check out map</button>
+            </article>
         </section>
     </div>
     
