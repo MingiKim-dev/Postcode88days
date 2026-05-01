@@ -72,7 +72,7 @@
   border-bottom: none;
 }
 
-.information-layer:focus-within {
+.information-layer:has(.search-input:focus) {
   height: 100dvh;
   background-color: white;
 }
@@ -88,9 +88,11 @@
 /* When display suggestions == focus O, input O */
 .information-layer:has(.search-input:not(:-moz-placeholder)) .search-list__suggest {
   display: block;
+  background-color: white;
 }
 .information-layer:has(.search-input:not(:placeholder-shown)) .search-list__suggest {
   display: block;
+  background-color: white;
 }
 
 .information-layer:has(.search-input:not(:-moz-placeholder)) .search-list__recent {
