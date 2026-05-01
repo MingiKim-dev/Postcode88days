@@ -1,6 +1,6 @@
 .search-bar {
   pointer-events: auto;
-  display: flex;
+  display: none;
   flex-direction: row;
   gap: 1rem;
   align-items: center;
