@@ -1,3 +1,11 @@
+.search-comp {
+  pointer-events: auto;
+  display: grid;
+  grid-template-columns: subgrid;
+  grid-column: 1/-1;
+  margin: 1rem 16px 0;
+}
+
 .search-bar {
   grid-column: 1/-1;
   border-style: solid;
@@ -10,8 +18,8 @@
   gap: 1rem;
   align-items: center;
   height: 3rem;
-  margin-top: 1rem;
   padding: 0.5rem 1rem;
+  anchor-name: --anchor-search-bar;
 }
 
 .search-input {
@@ -23,19 +31,23 @@
 }
 
 .search-list {
-  width: 95%;
-  margin: 0 1rem;
-  padding: 0 1rem;
+  pointer-events: auto;
+  display: none;
+  position: fixed;
+  position-anchor: --anchor-search-bar;
+  position-area: bottom span-all;
+  width: anchor-size(--anchor-search-bar);
+  background-color: aquamarine;
 }
 
 .search-list__recent {
   display: none;
 }
 .search-list__recent p {
-  padding: 1rem 0.75rem;
+  padding: 1rem 1.75rem;
 }
 .search-list__recent ul {
-  padding: 0 2.5rem;
+  padding: 0 1.75rem;
 }
 .search-list__recent ul li {
   display: flex;
@@ -53,7 +65,7 @@
   display: none;
 }
 .search-list__suggest ul {
-  padding: 0 2.5rem;
+  padding: 0 3.5rem;
 }
 .search-list__suggest ul li {
   display: flex;
@@ -71,38 +83,80 @@
   border-bottom: none;
 }
 
-.information-layer:has(.search-input:focus) {
+.information-layer:has(.search-input:focus:-moz-placeholder) {
+  pointer-events: auto;
   height: 100dvh;
   background-color: white;
 }
 
-/* When display recent searches == focus O, input X */
-.information-layer:has(.search-input:focus:-moz-placeholder) .search-list__recent {
-  display: block;
-}
-.information-layer:has(.search-input:focus:placeholder-shown) .search-list__recent {
-  display: block;
-}
-
-/* When display suggestions == focus O, input O */
-.information-layer:has(.search-input:not(:-moz-placeholder)) .search-list__suggest {
-  display: block;
+.information-layer:has(.search-input:focus:placeholder-shown) {
+  pointer-events: auto;
+  height: 100dvh;
   background-color: white;
 }
-.information-layer:has(.search-input:not(:placeholder-shown)) .search-list__suggest {
+.information-layer:has(.search-input:focus:-moz-placeholder) .search-bar__control1 img {
+  content: url(../../assets/icons/arrow-left24-2.svg);
+}
+.information-layer:has(.search-input:focus:placeholder-shown) .search-bar__control1 img {
+  content: url(../../assets/icons/arrow-left24-2.svg);
+}
+.information-layer:has(.search-input:focus:-moz-placeholder) .search-bar__control2 img {
+  content: url(../../assets/icons/x24-2.svg);
+}
+.information-layer:has(.search-input:focus:placeholder-shown) .search-bar__control2 img {
+  content: url(../../assets/icons/x24-2.svg);
+}
+.information-layer:has(.search-input:focus:-moz-placeholder) .search-list {
   display: block;
+}
+.information-layer:has(.search-input:focus:placeholder-shown) .search-list {
+  display: block;
+}
+.information-layer:has(.search-input:focus:-moz-placeholder) .search-list .search-list__recent {
+  display: block;
+}
+.information-layer:has(.search-input:focus:placeholder-shown) .search-list .search-list__recent {
+  display: block;
+}
+
+.information-layer:has(.search-input:focus:not(:-moz-placeholder)) {
+  pointer-events: auto;
+  height: 100dvh;
   background-color: white;
 }
 
-.information-layer:has(.search-input:not(:-moz-placeholder)) .search-list__recent {
-  display: none !important;
+.information-layer:has(.search-input:focus:not(:placeholder-shown)) {
+  pointer-events: auto;
+  height: 100dvh;
+  background-color: white;
 }
-
-.information-layer:has(.search-input:not(:placeholder-shown)) .search-list__recent {
-  display: none !important;
+.information-layer:has(.search-input:focus:not(:-moz-placeholder)) .search-bar__control1 img {
+  content: url(../../assets/icons/arrow-left24-2.svg);
 }
-
-/* When no focus in input == focus X, input O OR X */
-.information-layer:has(.search-input:not(:focus)) .search-list__suggest, .search-list__recent {
+.information-layer:has(.search-input:focus:not(:placeholder-shown)) .search-bar__control1 img {
+  content: url(../../assets/icons/arrow-left24-2.svg);
+}
+.information-layer:has(.search-input:focus:not(:-moz-placeholder)) .search-bar__control2 img {
+  content: url(../../assets/icons/x24-2.svg);
+}
+.information-layer:has(.search-input:focus:not(:placeholder-shown)) .search-bar__control2 img {
+  content: url(../../assets/icons/x24-2.svg);
+}
+.information-layer:has(.search-input:focus:not(:-moz-placeholder)) .search-list {
+  display: block;
+}
+.information-layer:has(.search-input:focus:not(:placeholder-shown)) .search-list {
+  display: block;
+}
+.information-layer:has(.search-input:focus:not(:-moz-placeholder)) .search-list .search-list__suggest {
+  display: block;
+}
+.information-layer:has(.search-input:focus:not(:placeholder-shown)) .search-list .search-list__suggest {
+  display: block;
+}
+.information-layer:has(.search-input:focus:not(:-moz-placeholder)) .search-list .search-list__recent {
+  display: none;
+}
+.information-layer:has(.search-input:focus:not(:placeholder-shown)) .search-list .search-list__recent {
   display: none;
 }/*# sourceMappingURL=search.css.map */

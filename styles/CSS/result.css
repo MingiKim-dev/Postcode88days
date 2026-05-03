@@ -1,41 +1,56 @@
 .result-panel {
-  display: none;
-  flex-direction: column;
-  padding: 2.5rem 2.5rem 0;
-  width: 100%;
-  height: 100dvh;
+  pointer-events: auto;
+  grid-row-start: 3;
+  grid-column: 1/-1;
+  display: grid;
+  grid-template-rows: 48px auto;
+  grid-template-columns: subgrid;
+  padding: 0 16px 0;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: black;
+  border-top-left-radius: 1.5rem;
+  border-top-right-radius: 1.5rem;
   background-color: #f9f9f9;
 }
+.result-panel .result-panel__magnify {
+  grid-row: 1;
+  grid-column: 1/-1;
+}
 .result-panel .result-panel__area-name {
+  grid-row-start: 2;
+  grid-column: 1/-1;
   font-size: 3rem;
-  margin-bottom: 1.5rem;
   color: #333;
 }
 .result-panel .result-panel__state {
+  grid-column: 1/-1;
   font-size: 1rem;
-  margin-bottom: 2rem;
   color: #666;
 }
 .result-panel .result-panel__postcode {
+  grid-column: 1/-1;
   font-size: 1.5rem;
-  margin-bottom: 1rem;
   color: #333;
 }
 .result-panel .result-panel__extendable {
+  grid-column: 1/-1;
   font-size: 2rem;
-  margin-bottom: 2rem;
   color: #333;
 }
-.result-panel hr {
-  align-self: center;
-  width: 80%;
-  border: none;
-  border-top: 1px solid #ccc;
-  margin-bottom: 2rem;
+
+.spacer-hr {
+  padding-top: 10px;
+  padding-bottom: 34px;
+  height: 48px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
 }
-.result-panel .result-panel__map-button {
-  font-size: 1rem;
-  align-self: center;
-  border: none;
-  cursor: pointer;
+.spacer-hr .drag-handle {
+  width: 48px;
+  height: 4px;
+  background-color: gray;
 }/*# sourceMappingURL=result.css.map */

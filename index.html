@@ -19,52 +19,58 @@
             <div id="map"></div>
         </section>
         <section class="information-layer">
-            <form class="search-bar" onsubmit="return false;">
-                <button class="search-bar__control1" aria-label="search control">
-                    <img src="./assets/icons/map-pin-search24-2.svg" aria-label="brand icon">
-                </button>
-                <input id="search-bar__input" class="search-input" type="text" placeholder="Enter area name or postcode" role="search-input" aria-label="search input">
-                <button class="search-bar__control2" type="submit" aria-label="search submit">
-                    <img src="./assets/icons/search24-2.svg">
-                </button>
+            <form class="search-comp" onsubmit="return false;">
+                <section class="search-bar">
+                    <button class="search-bar__control1" aria-label="search control">
+                        <img src="./assets/icons/map-pin-search24-2.svg" aria-label="brand icon">
+                    </button>
+                    <input id="search-bar__input" class="search-input" type="text" placeholder="Enter area name or postcode" autocomplete="off" role="search-input" aria-label="search input">
+                    <button class="search-bar__control2" type="submit" aria-label="search submit">
+                        <img src="./assets/icons/search24-2.svg">
+                    </button>
+                </section>
+                <section class="search-list">
+                    <div id="search-list__recent" class="search-list__recent layer" aria-label="recently searched list">
+                        <p>Recently searched</p>
+                        <ul id="recent-datalist" class="recent-datalist">
+                            <li>
+                                <img src="./assets/icons/history24-2.svg"><span>test-recent-1</span>
+                            </li>
+                            <li>
+                                <img src="./assets/icons/history24-2.svg"><span>test-recent-2</span>
+                            </li>
+                            <li>
+                                <img src="./assets/icons/history24-2.svg"><span>test-recent-3</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="search-list__suggest" class="search-list__suggest layer" aria-label="suggested search list">
+                        <ul id="suggest-datalist" class="suggest-datalist">
+                            <li>
+                                <span>test-suggest-1</span>
+                            </li>
+                            <li>
+                                <span>test-suggest-2</span>
+                            </li>
+                            <li>
+                                <span>test-suggest-3</span>
+                            </li>
+                        </ul>
+                    </div>
+                </section>
             </form>
-            <section class="search-list">
-                <div id="search-list__recent" class="search-list__recent layer" aria-label="recently searched list">
-                    <p>Recently searched</p>
-                    <ul id="recent-datalist" class="recent-datalist">
-                        <li>
-                            <img src="./assets/icons/history24-2.svg"><span>test-recent-1</span>
-                        </li>
-                        <li>
-                            <img src="./assets/icons/history24-2.svg"><span>test-recent-2</span>
-                        </li>
-                        <li>
-                            <img src="./assets/icons/history24-2.svg"><span>test-recent-3</span>
-                        </li>
-                    </ul>
-                </div>
-                <div id="search-list__suggest" class="search-list__suggest layer" aria-label="suggested search list">
-                    <ul id="suggest-datalist" class="suggest-datalist">
-                        <li>
-                            <span>test-suggest-1</span>
-                        </li>
-                        <li>
-                            <span>test-suggest-2</span>
-                        </li>
-                        <li>
-                            <span>test-suggest-3</span>
-                        </li>
-                    </ul>
-                </div>
-            </section>
+            
             <article id="result-panel" class="result-panel">
+                <div id="result-panel__magnify" class="result-panel__magnify spacer-hr">
+                    <button class="drag-handle"></button>
+                </div>
                 <h1 id="result-panel__area-name" class="result-panel__area-name">Springfield</h1>
                 <h4 id="result-panel__state" class="result-panel__state">Queensland</h4>
                 <h3 id="result-panel__postcode" class="result-panel__postcode">4000</h3>
                 <h2 id="result-panel__extendable" class="result-panel__extendable">Not extendable</h2>
                 <!-- Occupation list will be more concerned yet. -->
-                <hr>
-                <button id="result-panel__map-button" class="result-panel__map-button">Check out map</button>
+                <!-- <hr> -->
+                <!-- <button id="result-panel__map-button" class="result-panel__map-button">Check out map</button> -->
             </article>
         </section>
     </div>
